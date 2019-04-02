@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="num">
+<input type="button" onclick="add_element_to_arr()" value="Add" id="btnAdd">
+<input type="button" onclick="display_element()" value="Display" id="btnDisplay">
+<div id = "demo"></div>
+<script>
+    let x = 0;// x là index
+    let arr = [];
+    function add_element_to_arr(){
+        arr[x] = document.getElementById("num").value;
+        x++;//để tăng giá trị của index sau mỗi lần ấn Add
+        document.getElementById("num").value = "";// cách để mỗi lần ấn add xong thì ô input sẽ tự động xóa
+    }
+
+    function display_element() {
+        let e = "<hr/>";
+        for (let x = 0; x < arr.length; x++){
+            e = e + "So thu " + x + " la " + arr[x] + "<br/>";
+        }
+        document.getElementById("demo").innerHTML = e;
+    }
+</script>
+</body>
+</html>
